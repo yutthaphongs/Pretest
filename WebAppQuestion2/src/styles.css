@@ -1,0 +1,11 @@
+/* You can add global styles to this file, and also import other style files */
+thead th{
+    font-weight: 400;
+  }
+  table {
+    border: 1px solid #000;
+  }
+  table tbody tr:hover {
+    background-color: #fffbf2;
+    cursor: pointer;
+  }

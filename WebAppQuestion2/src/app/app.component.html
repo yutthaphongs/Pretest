@@ -1,0 +1,36 @@
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+</style>
+  
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <table class="table">
+          <thead class="thead">
+              <tr>
+                  <th>
+                    Categories                 
+                    <input type="text" class="left" id="fillter" name="fillter" (keydown.enter)="onSearch($event)"
+                      [(ngModel)]="fillter" #ctrl="ngModel">
+                  </th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let data of service.categories">
+                  <td >{{data}}</td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

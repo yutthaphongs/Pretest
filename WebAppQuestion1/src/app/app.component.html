@@ -1,0 +1,88 @@
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * The content below * * * * * * * * * * * -->
+<!-- * * * * * * * * * * is only a placeholder * * * * * * * * * * -->
+<!-- * * * * * * * * * * and can be replaced. * * * * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+<!-- * * * * * * * * * Delete the template below * * * * * * * * * * -->
+<!-- * * * * * * * to get started with your project! * * * * * * * * -->
+<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 30px;
+    text-align: center;
+    height: 100vh;
+  }
+
+  .flex-item-left {
+    background-color: #ffffff;
+    flex: 200px;
+    border: 1px solid #000;
+  }
+
+  .flex-item-center {
+    background-color: #ffffff;
+    flex: auto;
+    border: 1px solid #000;
+  }
+
+  .flex-item-right {
+    background-color: #ffffff;
+    flex: 300px;
+    border: 1px solid #000;
+  }
+
+  .left {
+    float: left;
+  }
+
+  .font {
+    font-size: 17px;
+  }
+
+  /* Responsive layout - makes a one column-layout instead of a two-column layout */
+  @media (max-width: 600px) {
+
+    .flex-item-right,
+    .flex-item-center,
+    .flex-item-left {
+      flex: 100%;
+      overflow-y: scroll;
+    }
+  }
+</style>
+
+<div class="flex-container">
+  <div class="flex-item-left">
+    <input type="number" class="left" id="fillNumber" name="fillNumber" (keydown.enter)="onChange($event)"
+    [(ngModel)]="fillNumber" #ctrl="ngModel" required>
+  </div>
+  <div class="flex-item-center">
+    <select name="primes" class="left" id="primes" [(ngModel)]="selectedType" (change)="onChange($event)">
+      <option value="isPrime" selected>isPrime</option>
+      <option value="isFibonacci">isFibonacci</option>
+    </select>
+  </div>
+  <div class="flex-item-right">
+    <label for="result" class="left font">{{result}}</label>
+  </div>
+</div>
+
+
+<router-outlet></router-outlet>
